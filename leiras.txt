@@ -1,1 +1,271 @@
+Példa:
+
+--- input ---
+AND A C
+C 0205094150
+B 0001020304
+A 0028033517
+--- input ---
+
+beolvasas utan:
+
+gateInput = ["AND", "A", "C"]
+gateInput[0] = "AND"
+gateInput[1] = "A"
+gateInput[2] = "C"
+
+vars = []
+read = 0
+
+-- WHILE LOOP IGAZ --
+input = "C 0205094150"
+
+if(input != null) IGAZ
+
+inputData = ["", "", "", "", ""]
+
+op = "C"
+    FOR LOOP (24.sor)
+    k = 1
+    if (op == gateInput[k]) HAMIS
+    
+    k = 2
+    if (op == gateInput[k]) IGAZ
+    
+        for loop (28. sor)
+        
+        i = 0
+        startIndex = 2
+        if (startIndex < input.Length) IGAZ
+        tmp = "0,2"
+        level = 0.2
+        
+        if (level <= 0.8 && level >= 0) IGAZ
+        rel = "0"
+        inputData[0] = "0"
+        
+        i = 1
+        startIndex = 4
+        if (startIndex < input.Length) IGAZ
+        tmp = "0,5"
+        level = 0.5
+        
+        if (level <= 0.8 && level >= 0) IGAZ
+        rel = "0"
+        inputData[1] = "0"
+        
+        i = 2
+        startIndex = 6
+        if (startIndex < input.Length) IGAZ
+        tmp = "0,9"
+        level = 0.9
+        
+        if (level <= 0.8 && level >= 0) HAMIS
+        else if(level <= 5 && level >= 2.7) IGAZ
+        rel = "E"
+        
+        inputData[2] = "E"
+        
+        i = 3
+        startIndex = 8
+        if (startIndex < input.Length) IGAZ
+        tmp = "4,1"
+        level = 4.1
+        
+        if (level <= 0.8 && level >= 0) HAMIS
+        else if(level <= 5 && level >= 2.7) IGAZ
+        rel = "1"
+        
+        inputData[3] = "1"
+        
+        i = 4
+        startIndex = 10
+        if (startIndex < input.Length) IGAZ
+        tmp = "5,0"
+        level = 5.0
+        
+        if (level <= 0.8 && level >= 0) HAMIS
+        else if(level <= 5 && level >= 2.7) IGAZ
+        rel = "1"
+        
+        inputData[4] = "1"
+    
+    vars.Add(inputData)
+    read = 1
+    
+    
+-- WHILE LOOP IGAZ --
+input = "B 0001020304"
+
+if(input != null) IGAZ
+
+inputData = ["", "", "", "", ""]
+
+op = "C"
+    FOR LOOP (24.sor)
+    k = 1
+    if (op == gateInput[k]) HAMIS
+    
+    k = 2
+    if (op == gateInput[k]) HAMIS
+    
+    read = 1
+
+
+-- WHILE LOOP IGAZ --
+input = "A 0028033517"
+
+if(input != null) IGAZ
+
+inputData = ["", "", "", "", ""]
+
+op = "C"
+    FOR LOOP (24.sor)
+    k = 1
+    if (op == gateInput[k]) IGAZ
+    
+        for loop (28. sor)
+        
+        i = 0
+        startIndex = 2
+        if (startIndex < input.Length) IGAZ
+        tmp = "0,0"
+        level = 0.0
+        
+        if (level <= 0.8 && level >= 0) IGAZ
+        rel = "0"
+        inputData[0] = "0"
+        
+        i = 1
+        startIndex = 4
+        if (startIndex < input.Length) IGAZ
+        tmp = "2,8"
+        level = 2.8
+        
+        if (level <= 0.8 && level >= 0) HAMIS
+        else if(level <= 5 && level >= 2.7) IGAZ
+        rel = "1"
+        inputData[1] = "1"
+        
+        i = 2
+        startIndex = 6
+        if (startIndex < input.Length) IGAZ
+        tmp = "0,3"
+        level = 0.3
+        
+        if (level <= 0.8 && level >= 0) IGAZ
+        rel = "0"
+        
+        inputData[2] = "0"
+        
+        i = 3
+        startIndex = 8
+        if (startIndex < input.Length) IGAZ
+        tmp = "3,5"
+        level = 3.5
+        
+        if (level <= 0.8 && level >= 0) HAMIS
+        else if(level <= 5 && level >= 2.7) IGAZ
+        rel = "1"
+        
+        inputData[3] = "1"
+        
+        i = 4
+        startIndex = 10
+        if (startIndex < input.Length) IGAZ
+        tmp = "1,7"
+        level = 1.7
+        
+        if (level <= 0.8 && level >= 0) HAMIS
+        else if(level <= 5 && level >= 2.7) HAMIS
+        rel = "E"
+        
+        inputData[4] = "E"
+    
+    vars.Add(inputData)
+    read = 2
+    
+    k = 2
+    if (op == gateInput[k]) HAMIS
+
+--- WHILE LOOP HAMIS ---
+
+gateInput = ["AND", "A", "C"]
+vars = [["0", "0", "E", "1", "1"], ["0", "1", "0", "1", "E"]]
+
+report = GetOutput(vars, gateInput)
+
+function hivas
+
+res = ""
+gate = "AND"
+
+switch -> case "AND"
+
+    for loop(79.sor)
+    
+    i = 0
+    vars[0][0] = "0"
+    vars[1][0] = "0"
+    
+    if (vars[0][i] == vars[1][i] && vars[0][i] == "1") HAMIS
+    else if (vars[0][i] != "E" && vars[1][i] != "E") IGAZ 
+    
+    res += "0"
+
+    i = 1
+    res = "0"
+    vars[0][0] = "0"
+    vars[1][0] = "1"
+    
+    if (vars[0][i] == vars[1][i] && vars[0][i] == "1") HAMIS
+    else if (vars[0][i] != "E" && vars[1][i] != "E") IGAZ 
+    
+    res += "0"
+
+    i = 2
+    res = "00"
+    vars[0][0] = "E"
+    vars[1][0] = "0"
+    
+    if (vars[0][i] == vars[1][i] && vars[0][i] == "1") HAMIS
+    else if (vars[0][i] != "E" && vars[1][i] != "E") HAMIS 
+    
+    res += "E"
+
+    i = 3
+    res = "00E"
+    vars[0][0] = "1"
+    vars[1][0] = "1"
+    
+    if (vars[0][i] == vars[1][i] && vars[0][i] == "1") IGAZ
+
+    res += "1"
+
+    i = 4
+    res = "00E1"
+    vars[0][0] = "1"
+    vars[1][0] = "E"
+    
+    if (vars[0][i] == vars[1][i] && vars[0][i] == "1") HAMIS
+    else if (vars[0][i] != "E" && vars[1][i] != "E") HAMIS 
+
+    res += "E"
+
+    i = 5 
+    for loop vége
+    
+    res = "00E1E"
+    
+    return res
+    
+vissza a main()-be
+
+kiirjuk az eredményt
+
+--- output ---
+00E1E
+--- output ---
+
+vége a programnak
 
