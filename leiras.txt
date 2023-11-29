@@ -101,7 +101,7 @@ if(input != null) IGAZ
 
 inputData = ["", "", "", "", ""]
 
-op = "C"
+op = "B"
     FOR LOOP (24.sor)
     k = 1
     if (op == gateInput[k]) HAMIS
@@ -119,7 +119,7 @@ if(input != null) IGAZ
 
 inputData = ["", "", "", "", ""]
 
-op = "C"
+op = "A"
     FOR LOOP (24.sor)
     k = 1
     if (op == gateInput[k]) IGAZ
